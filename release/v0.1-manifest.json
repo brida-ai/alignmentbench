@@ -1,0 +1,36 @@
+{
+  "benchmark_version": "0.1.0",
+  "files": [
+    {
+      "bytes": 7204,
+      "path": "README.md",
+      "sha256": "68c24d00f789dcb9cecdd967ebfb69907c08224889df5e43fb2f6969b3f99f8d"
+    },
+    {
+      "bytes": 5473,
+      "path": "METHODOLOGY.md",
+      "sha256": "b1f2ffad0cfb07dfa9bd1bd06a171509d502f44cc109166d5d32fd58eefa7896"
+    },
+    {
+      "bytes": 2181,
+      "path": "BENCHMARK_CARD.md",
+      "sha256": "aa8e40ba4fbb47cd87e8eff975d5ef48ad1f144cfcbfbd7e9f3d9bd5b878b359"
+    },
+    {
+      "bytes": 827,
+      "path": "VERSIONING.md",
+      "sha256": "b66c5a05401fa93c04a3e9ada136096083b5906df273538edf99cefb6377af79"
+    },
+    {
+      "bytes": 29376,
+      "path": "corpora/operational-alignment-v0.1.jsonl",
+      "sha256": "836c6294643af7127747299fc202315ea0b7e3540723d28c4fc036ea3d74a121"
+    },
+    {
+      "bytes": 3344,
+      "path": "configs/reflex-alignment-v1.json",
+      "sha256": "137ffbe50fcc6accbcdb621e725c920bfecbb330e06a23d7e9141d5e389f36e5"
+    }
+  ],
+  "schema": "brida.ai/alignmentbench/release-manifest/v0.1"
+}

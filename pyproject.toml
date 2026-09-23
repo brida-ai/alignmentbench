@@ -1,0 +1,12 @@
+[project]
+name = "alignmentbench"
+version = "0.1.0"
+description = "Open behavioral benchmark for operational alignment under explicit policies"
+requires-python = ">=3.11"
+license = { text = "Apache-2.0" }
+
+[project.scripts]
+alignmentbench = "alignmentbench.cli:main"
+
+[tool.alignmentbench]
+benchmark-version = "0.1.0"

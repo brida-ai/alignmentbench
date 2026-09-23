@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Rebuild frozen public corpus
+        run: |
+          cp corpora/operational-alignment-v0.1.jsonl /tmp/corpus.before
+          python3 tools/build_public_corpus.py
+          cmp /tmp/corpus.before corpora/operational-alignment-v0.1.jsonl
+      - name: Verify release manifest
+        run: |
+          cp release/v0.1-manifest.json /tmp/manifest.before
+          python3 tools/build_release_manifest.py
+          cmp /tmp/manifest.before release/v0.1-manifest.json
+      - name: Compile
+        run: python3 -m compileall -q alignmentbench tests tools
+      - name: Unit tests
+        run: python3 -m unittest discover -s tests -p 'test_*.py' -v
+      - name: Validate corpus
+        run: python3 -m alignmentbench.cli validate --cases corpora/operational-alignment-v0.1.jsonl

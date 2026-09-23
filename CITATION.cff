@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use AlignmentBench, please cite this repository."
+title: "AlignmentBench: Operational Alignment Benchmark"
+type: software
+authors:
+  - family-names: "Navarro"
+    given-names: "Carlos"
+repository-code: "https://github.com/brida-ai/alignmentbench"
+url: "https://github.com/brida-ai/alignmentbench"
+license: Apache-2.0
+version: 0.1.0
+date-released: 2026-09-23
