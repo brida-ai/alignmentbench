@@ -1,3 +1,8 @@
+// Historical example. Hosted Brida Reflex was archived in November 2026
+// (https://www.brida.ai/reflex), so this script no longer reaches a hosted service.
+// It is kept to document how the audit ran. To reproduce the audit today, send each
+// row's `state` to any evaluator that implements the public Reflex Alignment contract.
+
 import fs from 'node:fs'
 import readline from 'node:readline'
 import { Brida } from '@brida/sdk'
