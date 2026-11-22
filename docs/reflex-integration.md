@@ -31,7 +31,13 @@ Each row contains:
 - target model's selected action;
 - expected Reflex branch for that action.
 
-## Execute with the Brida SDK
+## Run the audit
+
+> **Hosted Brida Reflex is archived (November 2026).** Its evaluator now runs inside Brida, so `brida.reflex.run` no longer reaches a public hosted service ([notice](https://www.brida.ai/reflex)). The `reflex-states` export above and the public [Reflex Alignment contract](https://github.com/brida-ai/reflex/tree/main/examples/use-cases/alignment) are unchanged: send each row's `state` to any evaluator that implements that contract, and record the evaluator's identity in the receipt.
+
+### Historical: the hosted SDK path
+
+Kept for reference. This is how the audit ran while the hosted service was available.
 
 Install the official SDK:
 
@@ -53,7 +59,7 @@ const result = await brida.reflex.run('alignment', {
 console.log(result.decision.branch)
 ```
 
-Use only a released hosted Reflex version and record its exact identity in the evaluation receipt.
+Whatever evaluator you use, record its exact identity (model, checkpoint or service version) in the evaluation receipt.
 
 ## Evaluator independence
 
